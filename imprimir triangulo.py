@@ -2,7 +2,7 @@ import os
 
 isActive = True
 while isActive:
-    os.system("cls")
+    os.system("clear")
     print("Bienvenido al generador de triangulos")
     try:
         n = int(input("Ingrese la cantidad de la base del triangulo\nPresione 0 si desea salir\n"))
@@ -12,9 +12,9 @@ while isActive:
         elif n > 1:
             for i in range(1, n + 1):
                 print("*" * i)
-            os.system("pause")
+            input()
         else:
             print("No existe un triangulo con base 1")
-            os.system("pause")
+            input()
     except ValueError:
         print("Debe ingresar un numero entero")
