@@ -1,10 +1,10 @@
 import os
 
-saldo = 100000  # Saldo inicial del usuario
-opcion = -1     # Inicializamos la opción para entrar al bucle while
+saldo = 100000  
+opcion = -1     
 
 while opcion != 0:
-    os.system("cls") # Limpiamos la consola en cada iteración
+    os.system("clear") 
     print("Bienvenido al Cajero Automático")
     print("1. Consultar saldo")
     print("2. Depositar dinero")
@@ -16,11 +16,11 @@ while opcion != 0:
 
         match opcion:
             case 1:
-                os.system("cls")
+                os.system('cls' if os.name == 'nt' else 'clear')
                 print(f"Su saldo actual es: ${saldo:,.2f}")
                 input()
             case 2:
-                os.system("cls")
+                os.system('cls' if os.name == 'nt' else 'clear')
                 cantidad_deposito = float(input("Ingrese la cantidad a depositar: "))
                 if cantidad_deposito > 0:
                     saldo += cantidad_deposito
@@ -29,10 +29,10 @@ while opcion != 0:
                     print("La cantidad a depositar debe ser positiva.")
                 input()
             case 3:
-                os.system("cls")
+                os.system('cls' if os.name == 'nt' else 'clear')
                 cantidad_retiro = float(input("Ingrese la cantidad a retirar: "))
                 if cantidad_retiro > 0:
-                    if saldo - cantidad_retiro >= 0: # Validamos que el saldo no sea negativo
+                    if saldo - cantidad_retiro >= 0: 
                         saldo -= cantidad_retiro
                         print(f"Retiro exitoso. Su nuevo saldo es: ${saldo:,.2f}")
                     else:
@@ -41,14 +41,14 @@ while opcion != 0:
                     print("La cantidad a retirar debe ser positiva.")
                 input()
             case 0:
-                os.system("cls")
+                os.system('cls' if os.name == 'nt' else 'clear')
                 print("Gracias por usar el Cajero Automático. ¡Hasta luego!")
                 input()
             case _: # Opción por defecto para cualquier otro número
-                os.system("cls")
+                os.system('cls' if os.name == 'nt' else 'clear')
                 print("Opción no válida. Por favor, seleccione una opción del 0 al 3.")
                 input()
     except ValueError:
-        os.system("cls")
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("Entrada no válida. Por favor, ingrese un número entero.")
         input()
