@@ -4,7 +4,7 @@ saldo = 100000
 opcion = -1     
 
 while opcion != 0:
-    os.system("clear") 
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Bienvenido al Cajero Automático")
     print("1. Consultar saldo")
     print("2. Depositar dinero")
